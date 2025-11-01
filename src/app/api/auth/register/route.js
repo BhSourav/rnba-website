@@ -42,7 +42,7 @@ export async function POST(request) {
     })
 
     // Don't send back the hashed password
-    const { hashedPassword: _, ...userWithoutPassword } = user
+    const { hashedPassword: _hashedPassword, ...userWithoutPassword } = user
 
     return NextResponse.json(
       { user: userWithoutPassword, message: 'User created successfully' },

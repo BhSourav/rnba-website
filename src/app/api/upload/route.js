@@ -2,7 +2,7 @@ import { NextResponse } from 'next/server';
 import { getServerSession } from 'next-auth/next';
 import { authOptions } from '../auth/[...nextauth]/route';
 import { PrismaClient } from '@prisma/client';
-import { writeFile, mkdir, unlink, readdir } from 'fs/promises';
+import { writeFile, mkdir, unlink } from 'fs/promises';
 import { join } from 'path';
 
 const prisma = new PrismaClient();
@@ -10,12 +10,7 @@ const prisma = new PrismaClient();
 // Ensure the upload directory exists
 const uploadDir = join(process.cwd(), 'public/uploads');
 
-// Disable body parsing, we'll handle it manually
-export const config = {
-  api: {
-    bodyParser: false,
-  },
-};
+// Note: Next.js 13+ handles multipart/form-data automatically
 
 export async function POST(request) {
   try {

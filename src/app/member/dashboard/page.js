@@ -11,11 +11,7 @@ import {
   FiFileText, 
   FiLogOut, 
   FiArrowRight, 
-  FiUpload, 
-  FiDownload, 
-  FiTrash2,
-  FiEdit2,
-  FiPlus
+  FiUpload
 } from 'react-icons/fi';
 import FileUploadDialog from '@/components/FileUploadDialog';
 import FileList from '@/components/FileList';

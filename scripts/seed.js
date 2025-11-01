@@ -1,3 +1,6 @@
+/* eslint-disable @typescript-eslint/no-require-imports */
+// This file is deprecated - we now use Supabase instead of Prisma
+// Keep for reference only
 const { PrismaClient } = require('@prisma/client');
 const bcrypt = require('bcryptjs');
 

@@ -67,7 +67,9 @@ export default function FileUploadDialog({ isOpen, onClose, onUpload }) {
       if (response.ok) {
         setUploadComplete(true);
         const result = await response.json();
-        onUpload && onUpload(result);
+        if (onUpload) {
+          onUpload(result);
+        }
         
         // Reset after successful upload
         setTimeout(() => {
